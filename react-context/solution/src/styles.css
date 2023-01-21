@@ -1,0 +1,54 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.dashboard {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidebar {
+  flex-basis: 20%;
+  border: 1px solid #aaa;
+  height: 50vh;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.history {
+  max-height: 30vh;
+  overflow-y: auto;
+}
+
+.main {
+  flex-basis: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  font-size: 2rem;
+  min-width: 100px;
+  min-height: 100px;
+  margin: 10px;
+  border-radius: 10px;
+  transition: 200ms;
+  cursor: pointer;
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+button:active {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+#save-btn {
+  font-size: 1rem;
+  min-width: 50px;
+  min-height: 50px;
+}
