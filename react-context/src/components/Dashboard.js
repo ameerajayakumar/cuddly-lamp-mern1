@@ -1,31 +1,31 @@
-import React, { useState } from "react";
-import Main from "./Main";
-import Sidebar from "./Sidebar";
-import { totalCount } from "../App";
+// import React, { useState } from "react";
+// import Main from "./Main";
+// import Sidebar from "./Sidebar";
+// import { totalCount } from "../App";
 
-export const initCounterState = [
-  { id: "one", diff: 2, value: 0 },
-  { id: "two", diff: 3, value: 0 }
-];
+// export const initCounterState = [
+//   { id: "one", diff: 2, value: 0 },
+//   { id: "two", diff: 3, value: 0 }
+// ];
 
-const Dashboard = () => {
-  //Here we are maintaining the two states
-  const [counters, setCounters] = useState(initCounterState);
-  const [countHistory, setCountHistory] = useState([]);
+// const Dashboard = () => {
+//   //Here we are maintaining the two states
+//   const [counters, setCounters] = useState(initCounterState);
+//   const [countHistory, setCountHistory] = useState([]);
 
-  //These states will be passed to the child components
-  return (
-    <div className="dashboard">
-      <Sidebar totalCount={totalCount(counters)} countHistory={countHistory} />
-      <Main
-        counters={counters}
-        setCounters={setCounters}
-        countHistory={countHistory}
-        setCountHistory={setCountHistory}
-      />
-    </div>
-  );
-};
+//   //These states will be passed to the child components
+//   return (
+//     <div className="dashboard">
+//       <Sidebar totalCount={totalCount(counters)} countHistory={countHistory} />
+//       <Main
+//         counters={counters}
+//         setCounters={setCounters}
+//         countHistory={countHistory}
+//         setCountHistory={setCountHistory}
+//       />
+//     </div>
+//   );
+// };
 
 // ~~~ With Context ~~~
 // import React, { createContext, useState } from "react";
@@ -63,25 +63,25 @@ const Dashboard = () => {
 // };
 
 // ~~ With Context & Custom Providers ~~
-// import React from "react";
-// import { CountProvider } from "./CountProvider";
-// import Main from "./Main";
-// import Sidebar from "./Sidebar";
+import React from 'react';
+import { CountProvider } from './CountProvider';
+import Main from './Main';
+import Sidebar from './Sidebar';
 
-// export const initCounterState = [
-//   { id: "one", diff: 2, value: 0 },
-//   { id: "two", diff: 3, value: 0 }
-// ];
+export const initCounterState = [
+  { id: 'one', diff: 2, value: 0 },
+  { id: 'two', diff: 3, value: 0 },
+];
 
-// const Dashboard = () => {
-//   return (
-//     <CountProvider initState={initCounterState}>
-//       <div className="dashboard">
-//         <Sidebar />
-//         <Main />
-//       </div>
-//     </CountProvider>
-//   );
-// };
+const Dashboard = () => {
+  return (
+    <CountProvider initState={initCounterState}>
+      <div className="dashboard">
+        <Sidebar />
+        <Main />
+      </div>
+    </CountProvider>
+  );
+};
 
 export default Dashboard;
