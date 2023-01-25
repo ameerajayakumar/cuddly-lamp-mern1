@@ -3,6 +3,6 @@ import fruitReducer from '../features/fruits/fruitSlice';
 
 export const store = configureStore({
   reducer: {
-    fruit: fruitReducer,
+    fruitReducer: fruitReducer,
   },
 });
